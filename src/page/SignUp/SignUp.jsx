@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext } from "react";
+import SocialLogin from "../../component/socialLogin/SocialLogin";
 
 const SignUp = () => {
 
@@ -102,6 +103,9 @@ const SignUp = () => {
 
                 <input className="btn btn-primary" type="submit" />
             </form>
+            <div>
+                 <SocialLogin></SocialLogin>
+            </div>
         </div>
     );
 };
