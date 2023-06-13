@@ -1,12 +1,21 @@
 import { useLoaderData } from 'react-router-dom'
 import SingleCard from './SingleCard';
+import { useEffect, useState } from 'react';
 
 const SingleSpecific = () => {
+    const [loading , setloading] = useState(true)
     const loadData = useLoaderData();
+    // const [loading , setloading] = useState(true)
     const {chefName,  numberOfRecipes} = loadData;
     console.log(numberOfRecipes);
+    useEffect(()=> {
+        if(loadData){
+            setloading(false)
+        }
+    },[loadData])
     // console.log(loadData);
     return (
+        loading ? <><h1 className='text-7xl text-white'>sayem</h1></> : <>
         <div className='my-24'>
             <div className='mt-14' style={{
                 backgroundImage: 'url("https://i.ibb.co/s355FQZ/vegetables-set-left-black-slate.jpg")',
@@ -46,6 +55,7 @@ const SingleSpecific = () => {
                  </div>
             </div>
         </div>
+        </>
     );
 };
 

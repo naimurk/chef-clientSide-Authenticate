@@ -12,6 +12,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import SignUp from './page/SignUp/SignUp.jsx';
 import Login from './page/Login/Login.jsx';
 import SingleSpecific from './page/SingleSpecific/SingleSpecific.jsx';
+import { ToastContainer, toast } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -25,26 +26,29 @@ const router = createBrowserRouter([
       },
       {
         path: 'signUp',
-        element : <SignUp></SignUp>
+        element: <SignUp></SignUp>
       },
       {
-        path : 'login',
-        element : <Login></Login>
+        path: 'login',
+        element: <Login></Login>
       },
       {
-        path : '/chef/:id',
-        element : <SingleSpecific></SingleSpecific>,
-        loader: ({params})=> fetch(`http://localhost:5000/chef/${params.id}`)
+        path: '/chef/:id',
+        element: <SingleSpecific></SingleSpecific>,
+        loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
       },
-      
+
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ToastContainer />
     <AuthProvider>
-      <RouterProvider router={router} />
+    
+        <RouterProvider router={router} />
+      
     </AuthProvider>
   </React.StrictMode>,
 )

@@ -4,14 +4,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const SingleCard = ({ item }) => {
-    toast('wow')
+    
     const { recipeName, ingredients, cookingMethod, rating } = item
     // console.log(recipeName);
     const [disable, setDisable] = useState(false)
 
     const handleFavorite = () => {
         setDisable(true)
-        toast('wow')
+        toast('added successfully')
     }
     return (
         <div>
@@ -33,7 +33,7 @@ const SingleCard = ({ item }) => {
                         <button disabled={disable} onClick={handleFavorite} className="btn">
                             Favorite
                         </button>
-                        <ToastContainer />
+                        
                     </div>
                 </div>
 
