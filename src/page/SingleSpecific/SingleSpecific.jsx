@@ -32,9 +32,9 @@ const SingleSpecific = () => {
                 </div>
 
             </div>
-            <div className='py-14'>
+            <div className='py-16'>
                  <h1 className=' text-slate-300 text-5xl text-center'> Recipe of The  Chef</h1>
-                 <div className='grid grid-cols-3 gap-12 justify-center items-center'>
+                 <div className='grid my-12 grid-cols-3 gap-12 justify-center items-center'>
                      {
                        numberOfRecipes?.map((item, index)=> <SingleCard
                        key={index}
