@@ -7,3 +7,7 @@
 .navbar a {
     color: white;
 }
+.navbar a.active {
+    color: black;
+    background-color: white;
+}

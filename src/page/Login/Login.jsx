@@ -1,13 +1,15 @@
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../component/socialLogin/SocialLogin";
+import { setLogLevel } from "firebase/app";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-   
+    // const [error , setError] = useState('')
+    const [loginError , setLoginError] = useState('')
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -18,13 +20,18 @@ const Login = () => {
         .then(result => {
             const user = result.user ;
             console.log(user)
-            
-        })
-        reset()
+            reset()
         navigate(from, { replace: true });
+        })
+        
+        .catch(error => {
+            setLoginError('invalid email and password')
+            console.log(error);
+        })
     }
     return (
         <div>
+            {loginError && <><p className="my-5 text-xl text-red-500">{loginError}</p></>}
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
 
