@@ -4,7 +4,12 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
-  const {user} = useContext(AuthContext)
+    const { user,logOut } = useContext(AuthContext)
+    const handleLogout = () => {
+        logOut()
+        .then(() => { })
+        .catch(error => console.log(error))
+    }
     return (
         <div className="navbar bg-primary">
             <div className="navbar-start">
@@ -15,6 +20,9 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><NavLink to={'/'}> Home</NavLink></li>
                         <li><NavLink to={'/blog'}></NavLink></li>
+                        {
+                            user && <li><button>log out </button></li>
+                        }
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">AT Chef</a>
@@ -23,16 +31,19 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><NavLink to={'/'}> Home</NavLink></li>
                     <li><NavLink to={'/blog'}>Blog</NavLink></li>
+                    {
+                        user && <li className=""><button onClick={handleLogout} className="btn btn-primary">log out </button></li>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
                 {
                     user ? <>
-                    <div className="tooltip mt-5" data-tip = { user?.displayName ? user?.displayName : ''  }><img className="w-[50px] rounded-full" src={user?.photoURL} alt="" /></div>
-                    </> : 
-                    <>
-                      <NavLink to={'/login'} ><button>Login</button></NavLink>
-                    </>
+                        <div className="tooltip mt-5" data-tip={user?.displayName ? user?.displayName : ''}><img className="w-[50px] rounded-full" src={user?.photoURL} alt="" /></div>
+                    </> :
+                        <>
+                            <NavLink to={'/login'} ><button className="btn bg-white">Login</button></NavLink>
+                        </>
                 }
             </div>
         </div>
