@@ -13,6 +13,7 @@ import SignUp from './page/SignUp/SignUp.jsx';
 import Login from './page/Login/Login.jsx';
 import SingleSpecific from './page/SingleSpecific/SingleSpecific.jsx';
 import { ToastContainer, toast } from 'react-toastify';
+import PrivateRoute from './Routes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/chef/:id',
-        element: <SingleSpecific></SingleSpecific>,
+        element: <PrivateRoute><SingleSpecific></SingleSpecific></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
       },
 
