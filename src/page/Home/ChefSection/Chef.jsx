@@ -25,7 +25,7 @@ const Chef = () => {
         {
           chef && chef?.map(item => <div
             key={item?.id}
-            className="card w-full bg-base-100 shadow-xl">
+            className="card lg:w-96 w-full bg-base-100 shadow-xl">
 
             <LazyLoad threshold={0.95}><img className=' h-[400px] lg:h-[500px] w-full lg:w-[400px] ' src={item?.chefPicture} alt="Shoes" /></LazyLoad>
             <div className="card-body">
