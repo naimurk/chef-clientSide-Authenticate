@@ -32,7 +32,7 @@ const Login = () => {
     }
     return (
         <div className=" w-full py-32 ">
-            <div className=" flex justify-center mx-auto p-12 bg-primary w-1/2">
+            <div className=" flex justify-center mx-auto p-12 rounded-xl bg-primary w-1/2">
                 
                 <div className="w-1/2">
                     <h1 className="text-5xl pb-8  font-bold">login now</h1>
@@ -77,8 +77,8 @@ const Login = () => {
 
 
 
-                        <input className="btn mt-4 " type="submit" />
-                        <Link><p>Create An Account <span className="text-white ">Sign UP</span></p></Link>
+                        <input className="btn text-white mt-4 " type="submit" value='log in ' />
+                        <Link to={'/signUp'}><p>Create An Account <span className="text-white ">Sign UP</span></p></Link>
                     </form>
 
                     <div className=" w-full flex my-4 justify-center  gap-x-5">

@@ -4,11 +4,11 @@ import faqImg from '../../../assets/about.jpg'
 
 const Faq = () => {
     return (
-        <div className="py-24">
-            <h1 className=" text-5xl font-bold lg:pt-14 lg:pb-24 text-white text-center">FAQ</h1>
-            <div className="flex w-full flex-row-reverse justify-between gap-16 items-center">
+        <div className="lg:py-24 py-14">
+            <h1 className=" lg:text-5xl text-4xl pb-14 font-bold lg:pt-14 lg:pb-24 text-white text-center">FAQ</h1>
+            <div className="lg:flex w-full flex-row-reverse justify-between gap-16 items-center">
             <div className="lg:w-1/2 w-full"><img className=' mx-auto w-full rounded-xl lg:w-3/4' src={faqImg} alt="" /></div>                <div className="lg:w-1/2 w-full">
-                    <h1 className="text-5xl text-primary pb-8 font-bold">Frequently Asked Questions</h1>
+                    <h1 className="lg:text-5xl text-4xl py-8 text-primary pb-8 font-bold">Frequently Asked Questions</h1>
                     <div>
                         {/* one */}
                         <div tabIndex={0} className="collapse my-4 collapse-plus border border-base-300 bg-base-200">

@@ -6,7 +6,7 @@ import Faq from "../Faq/Faq";
 
 const Home = () => {
     return (
-        <div>
+        <div className="w-full">
             <Banner></Banner>
             <Chef></Chef>
             <About></About>
