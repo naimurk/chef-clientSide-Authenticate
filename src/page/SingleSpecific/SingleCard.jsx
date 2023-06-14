@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const SingleCard = ({ item }) => {
     
-    const { recipeName, ingredients, cookingMethod, rating } = item
+    const { recipeName, ingredients, cookingMethod, rating } = item;
     // console.log(recipeName);
     const [disable, setDisable] = useState(false)
 
@@ -21,7 +21,7 @@ const SingleCard = ({ item }) => {
                         Recipe Name</span> : {recipeName}
                     </h2>
                     <p className="py-3"><span className="text-md font-bold text-white">
-                        ingredients</span> : {ingredients?.map(item => item).join(" , ")}
+                        ingredients</span> : { ingredients && ingredients?.map(item => item).join(" , ")}
                     </p>
                     <p>
                         <span className="text-md font-bold text-white"> Cooking Method</span>: {cookingMethod}

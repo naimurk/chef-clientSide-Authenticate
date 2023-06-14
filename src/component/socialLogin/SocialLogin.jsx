@@ -20,14 +20,14 @@ const SocialLogin = () => {
     }
 
     return (
-        <div>
-            <div className="text-center  py-5">
-                <div className="divider"></div>
+        
+            <div className="">
+                
                 <button onClick={handleSocialLogin} className="btn btn-circle btn-outline">
                     <FaGoogle></FaGoogle>
                 </button>
             </div>
-        </div>
+       
     );
 };
 

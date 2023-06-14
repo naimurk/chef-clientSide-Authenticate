@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,17 +12,25 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import SignUp from './page/SignUp/SignUp.jsx';
 import Login from './page/Login/Login.jsx';
 import SingleSpecific from './page/SingleSpecific/SingleSpecific.jsx';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
+import Error from './page/Error/Error.jsx';
+import Blog from './page/Blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
         element: <Home></Home>
+
+      },
+      {
+        path: 'blog',
+        element: <Blog></Blog>
 
       },
       {
@@ -34,7 +42,7 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path: '/chef/:id',
+        path: 'chef/:id',
         element: <PrivateRoute><SingleSpecific></SingleSpecific></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
       },
@@ -45,11 +53,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ToastContainer />
+
     <AuthProvider>
-    
-        <RouterProvider router={router} />
-      
+      <RouterProvider router={router} />
+
     </AuthProvider>
+      <ToastContainer />
   </React.StrictMode>,
 )

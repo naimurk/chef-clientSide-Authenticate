@@ -4,14 +4,14 @@ import { app } from "../firebase/firebase.config";
 
 
 
-export const AuthContext = createContext(app)
+export const AuthContext = createContext(null)
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider() ;
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(null)
-    const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider() ;
 
       // user create 
       const createUser = (email, password) => {
@@ -74,7 +74,7 @@ const AuthProvider = ({children}) => {
 
 
     const AuthInfo = {
-        user, loading, createUser, signIn, logOut, UserUpdateProfile, githubSignIn, googleSignIn, auth
+        user, loading, createUser, signIn, logOut, UserUpdateProfile, githubSignIn, googleSignIn,auth
     }
 
 

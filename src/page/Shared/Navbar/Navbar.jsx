@@ -19,7 +19,7 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><NavLink to={'/'}> Home</NavLink></li>
-                        <li><NavLink to={'/blog'}></NavLink></li>
+                        <li><NavLink to={'/blog'}>blog</NavLink></li>
                         {
                             user && <li><button>log out </button></li>
                         }

@@ -1,13 +1,13 @@
-import Lottie from "lottie-react";
-import faqjson from '../../../../faq.json'
+// import Lottie from "lottie-react";
+// import faqjson from '../../../../faq.json'
+import faqImg from '../../../assets/about.jpg'
 
 const Faq = () => {
     return (
         <div className="py-24">
-            <h1 className=" text-5xl font-bold text-white text-center">FAQ</h1>
+            <h1 className=" text-5xl font-bold lg:pt-14 lg:pb-24 text-white text-center">FAQ</h1>
             <div className="flex w-full flex-row-reverse justify-between gap-16 items-center">
-                <div className="lg:w-1/2 w-full"><Lottie animationData={faqjson}></Lottie></div>
-                <div className="lg:w-1/2 w-full">
+            <div className="lg:w-1/2 w-full"><img className=' mx-auto w-full rounded-xl lg:w-3/4' src={faqImg} alt="" /></div>                <div className="lg:w-1/2 w-full">
                     <h1 className="text-5xl text-primary pb-8 font-bold">Frequently Asked Questions</h1>
                     <div>
                         {/* one */}

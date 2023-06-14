@@ -1,11 +1,13 @@
-import Lottie from "lottie-react";
-import aboutjson from '../../../../about.json'
+// import Lottie from "lottie-react";
+// import aboutjson from '../../../../about.json'
+import aboutImg from '../../../assets/about1.jpg'
+
 const About = () => {
     return (
         <div className="py-24">
-            <h1 className=" text-5xl font-bold text-white text-center">know us</h1>
+            <h1 className=" text-5xl font-bold lg:pt-14 lg:pb-24 text-white text-center">know us</h1>
             <div className="flex w-full justify-between gap-10 items-center">
-                <div className="lg:w-1/2 w-full"><Lottie animationData={aboutjson}></Lottie></div>
+                <div className="lg:w-1/2 w-full"><img className=' mx-auto w-full rounded-xl lg:w-3/4' src={aboutImg} alt="" /></div>
                 <div className="lg:w-1/2 w-full">
                     <h1 className="text-5xl text-primary pb-8 font-bold">About Us</h1>
                     <p>

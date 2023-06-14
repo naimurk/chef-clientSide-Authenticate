@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext } from "react";
 import SocialLogin from "../../component/socialLogin/SocialLogin";
+import GithubLogin from "../../component/GithubLogin";
 
 const SignUp = () => {
 
@@ -12,7 +13,9 @@ const SignUp = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/login";
 
-    const { register, handleSubmit, watch, formState: { errors },reset } = useForm();
+    const { register, handleSubmit, formState: { errors },reset } = useForm();
+
+    
     const onSubmit = data => {
         createUser(data.email, data.password)
         .then(result => {
@@ -105,6 +108,7 @@ const SignUp = () => {
             </form>
             <div>
                  <SocialLogin></SocialLogin>
+                 <GithubLogin></GithubLogin>
             </div>
         </div>
     );

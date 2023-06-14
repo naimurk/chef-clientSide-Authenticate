@@ -22,7 +22,7 @@ const GithubLogin = () => {
 
     return (
         <div>
-             <button onClick={handleGithub} ><SiGithub></SiGithub></button>
+             <button className="btn btn-circle btn-outline" onClick={handleGithub} ><SiGithub></SiGithub></button>
         </div>
     );
 };
