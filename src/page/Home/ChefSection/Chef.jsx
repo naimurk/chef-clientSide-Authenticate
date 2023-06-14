@@ -11,7 +11,7 @@ const Chef = () => {
   const { user } = useContext(AuthContext)
 
   useEffect(() => {
-    fetch('http://localhost:5000/chef')
+    fetch('https://chef-server-alpha.vercel.app/chef')
       .then(res => res.json())
       .then(data => setChef(data))
   }, [])
