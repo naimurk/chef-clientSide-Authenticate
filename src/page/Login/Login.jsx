@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../component/socialLogin/SocialLogin";
 import { setLogLevel } from "firebase/app";
+import GithubLogin from "../../component/GithubLogin";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -75,8 +76,9 @@ const Login = () => {
                 <input className="btn btn-primary" type="submit" />
             </form>
 
-            <div>
+            <div className="flex">
                 <SocialLogin></SocialLogin>
+                <GithubLogin></GithubLogin>
             </div>
         </div>
     );
